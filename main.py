@@ -1,9 +1,19 @@
+import os
+from pathlib import Path
+
+from pico2d import open_canvas, close_canvas
 import game_framework
-from pico2d import*
 import logo_mode
-import play_mode
 
 
-open_canvas()
-game_framework.run(play_mode)
-close_canvas()
+def main():
+    os.chdir(Path(__file__).resolve().parent)
+    open_canvas()
+    try:
+        game_framework.run(logo_mode)
+    finally:
+        close_canvas()
+
+
+if __name__ == '__main__':
+    main()
