@@ -22,4 +22,4 @@ class Ball:
             game_world.remove_object(self)
 
     def draw(self):
-        self.image.draw(self.x, self.y)
+        self.image.draw(self.x, self.y, self.size, self.size)
